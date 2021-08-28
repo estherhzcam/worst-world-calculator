@@ -1,0 +1,1 @@
+https://estherhzcam.github.io/worst-world-calculator/
