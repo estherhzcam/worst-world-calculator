@@ -4,7 +4,9 @@ window.addEventListener("DOMContentLoaded", settingUp);
 let firstnumber = document.querySelector("#firstnumber").value
 let secondnumber = document.querySelector("#firstnumber").value
 let operator = document.querySelector("#operator").value
-let checkbox = document.querySelector("#doround")
+let checkbox = document.querySelector("#doround");
+let result;
+let resultrounded;
 
 function settingUp() {
 
@@ -27,22 +29,22 @@ function readOperator() {
 
     operator = document.querySelector("#operator").value
     if (operator === "add") {
-        let result = firstnumber + secondnumber
+        result = firstnumber + secondnumber
         console.log (result)
     }
 
     else if (operator === "sub") {
-        let result = firstnumber - secondnumber
+        result = firstnumber - secondnumber
         console.log (result)
     }
 
     else if (operator === "mul") {
-        let result = firstnumber * secondnumber
+        result = firstnumber * secondnumber
         console.log (result)
     }
 
     else {
-        let result = firstnumber / secondnumber
+        result = firstnumber / secondnumber
         console.log (result)
     }
 
@@ -51,13 +53,57 @@ function readOperator() {
 
 /* maybe something here: https://www.techiedelight.com/determine-checkbox-checked-javascript/ */
 function checkIfRounding() {
-console.log ("checking rounding stuff")
-
 if (checkbox.checked == true) {
-    console.log("rounding yes")
+    console.log("rounding yes");
+    let decimals = document.querySelector("#decimals").value
+    /* reference https://javascript.info/number#rounding */
+    if (decimals == 0) {
+        resultrounded = Math.round(result)
+        console.log(resultrounded)
+    }
+    else if (decimals == 1) {
+        resultrounded = result.toFixed(1)
+        console.log(resultrounded)
+    }
+    else if (decimals == 1) {
+        resultrounded = result.toFixed(2)
+        console.log(resultrounded)
+    }
+    else if (decimals == 1) {
+        resultrounded = result.toFixed(3)
+        console.log(resultrounded)
+    }
+    else if (decimals == 1) {
+        resultrounded = result.toFixed(4)
+        console.log(resultrounded)
+    }
+    else if (decimals == 1) {
+        resultrounded = result.toFixed(5)
+        console.log(resultrounded)
+    }
+    else if (decimals == 1) {
+        resultrounded = result.toFixed(6)
+        console.log(resultrounded)
+    }
+    else if (decimals == 1) {
+        resultrounded = result.toFixed(7)
+        console.log(resultrounded)
+    }
+    else {
+        resultrounded = result.toFixed(8)
+        console.log(resultrounded)
+    }
 }
 
 else  {
     console.log("rounding no")
+
+/*     <ul id="results">
+        <li>0</li>
+        <li>0</li>
+        <li>0</li>
+        <li>0</li>
+      </ul> */
+
 }
 }
