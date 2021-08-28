@@ -116,8 +116,9 @@ viewresult.append(result)
 document.querySelector("input[id=firstnumber]").value = result;
 /* clean imput fields */
 document.querySelector("input[id=secondnumber]").value = "";
-
 }
+scrollToBottom()
+
 }
 
 function clearResults () {
@@ -125,3 +126,11 @@ function clearResults () {
     document.querySelector("input[id=firstnumber]").value = "";
     document.querySelector("input[id=secondnumber]").value = "";
     document.querySelector("#results").innerHTML = '';}
+
+
+    /* Code for scroll down in div from https://www.codegrepper.com/code-examples/javascript/make+overflow-y+go+to+bottom */
+function scrollToBottom () {
+        console.log("scrolling")
+        let scroll = document.querySelector("#results");
+        scroll.scrollTop = scroll.scrollHeight - scroll.clientHeight;
+     }

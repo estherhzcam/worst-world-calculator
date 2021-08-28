@@ -16,7 +16,7 @@
   text-align: right;
   height: 8em;
   max-height: 8em;
-  overflow-y: scroll auto;
+  overflow-y: scroll;
 }
 
 #clear {
