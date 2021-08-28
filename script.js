@@ -1,8 +1,9 @@
 "use strict";
 
 window.addEventListener("DOMContentLoaded", settingUp);
-let firstnumber = document.querySelector("#firstnumber").value
-let secondnumber = document.querySelector("#firstnumber").value
+let imputfield1 = document.querySelector("#firstnumber").value;
+let firstnumber;
+let secondnumber;
 let operator = document.querySelector("#operator").value
 let checkbox = document.querySelector("#doround");
 let result;
@@ -94,16 +95,18 @@ if (checkbox.checked == true) {
         console.log(resultrounded)
     }
 }
+/* inserting result at the bottom of the list https://developer.mozilla.org/en-US/docs/Web/API/Element/after */
+
 
 else  {
     console.log("rounding no")
-
-/*     <ul id="results">
-        <li>0</li>
-        <li>0</li>
-        <li>0</li>
-        <li>0</li>
-      </ul> */
+let viewresult = document.createElement("li")
+document.querySelector("#results").appendChild(viewresult);
+viewresult.after(result)
+/*populate first result field*/
+document.querySelector("input[id=firstnumber]").value = result;
+/* clean imput fields */
+document.querySelector("input[id=secondnumber]").value = "";
 
 }
 }
